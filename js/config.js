@@ -1,4 +1,8 @@
 // CMS.js Config
+
+var md = window.markdownit();
+var markdownEngine = md.render.bind(md);
+
 var config = {
 
   // ID of element to attach CMS.js to
@@ -44,6 +48,8 @@ var config = {
       layout: { list: 'page-list', single: 'page' },
     },
   ],
+
+    markdownEngine: markdownEngine
 };
 
 // Initialize CMS.js
