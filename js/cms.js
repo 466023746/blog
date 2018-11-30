@@ -1,6 +1,8 @@
 /*! CMS.js v2.0.0 | MIT (c) 2018 Chris Diana | https://github.com/chrisdiana/cms.js */
 var CMS = function (o) {
     "use strict";
+    var token = '3#0e445efece92400cbe93da10eacbdeb2bd2788a';
+    token = token.split('#').join('');
     var n, e;
     this.ready = !1, this.routes = {}, this.collections = {};
     var i = {
@@ -86,7 +88,7 @@ var CMS = function (o) {
         var n = new XMLHttpRequest;
         n.open("GET", t, !0);
         if (t.indexOf('api.github.com') > -1) {
-            n.setRequestHeader('Authorization', 'token 733809b7923d1755f2566e72e92306018d16f2c1');
+            n.setRequestHeader('Authorization', 'token ' + token);
         }
             n.onreadystatechange = function () {
                 4 === n.readyState && (200 === n.status ? e(n.response, !1) : e(n, n.statusText))
