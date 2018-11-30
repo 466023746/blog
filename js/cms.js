@@ -86,7 +86,7 @@ var CMS = function (o) {
         var n = new XMLHttpRequest;
         n.open("GET", t, !0);
         if (t.indexOf('api.github.com') > -1) {
-            n.setRequestHeader('Authorization', 'token 07771892a53bb0f7a3da8e9f6e8bc244b57550b5');
+            n.setRequestHeader('Authorization', 'token 733809b7923d1755f2566e72e92306018d16f2c1');
         }
             n.onreadystatechange = function () {
                 4 === n.readyState && (200 === n.status ? e(n.response, !1) : e(n, n.statusText))
