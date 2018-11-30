@@ -1,61 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenget's Blog</title>
-    <meta name="description" content="Challenget's Blog">
-    <meta name="author" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <link rel="stylesheet" href="./css/animations.css">
-    <link rel="stylesheet" href="./css/poole.min.css">
-    <link rel="stylesheet" href="./css/poole.overrides.min.css">
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Challenget blog</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.7.2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bulma-blog.css">
+    <link href="./css/animations.css" rel="stylesheet">
     <noscript>Please enable JavaScript to view this site.</noscript>
-  </head>
-  <body>
-    <!-- Main Container -->
-    <div class="container content">
-      <!-- Header -->
-      <header class="masthead">
-        <h3 class="masthead-title">
-        <a href="#" class="sitename" title="Home">
-          Challenget's
-        </a>
-        <small class="tagline">
-          blog
-        </small>
-        </h3>
-        <!-- Navigation -->
-        <nav class="nav">
-          <ul>
-            <li><a href="#/posts">Posts</a></li>
-            <li><a href="//github.com/466023746" target="_blank">Github</a></li>
-            <li><a href="#/pages/about">About</a></li>
-            <li><a href="#/pages/links">Links</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <!-- CMS -->
-      <div id="cms"></div>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <small class="footer-text">
-        </small>
-      </footer>
+</head>
+<body>
+<!-- START NAV -->
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                Challenget Blog
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item is-active" href="#">
+                    Home
+                </a>
+                <a class="navbar-item" href="#/posts">
+                    Posts
+                </a>
+                <a class="navbar-item" href="#/pages/about">
+                    About
+                </a>
+                <a class="navbar-item" href="#/pages/links">
+                    Links
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Dropdown
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="#/pages">
+                            Pages
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</nav>
+<!-- END NAV -->
+<section class="hero is-info is-medium is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title is-size-1">
+                Challenget的博客
+            </h1>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <!-- START ARTICLE FEED -->
+    <section class="articles">
+        <div class="column is-8 is-offset-2">
 
-    <!-- ES5 Polyfills -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.12/es5-shim.min.js"></script>
-    <!-- CMS.js -->
-    <script src="./js/cms.js"></script>
-    <!-- Markdown Engine -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.2/markdown-it.min.js"></script>
-    <!-- Config -->
-    <script src="./js/config.js"></script>
-  </body>
+            <!-- CMS.js -->
+            <div id="cms"></div>
+
+        </div>
+    </section>
+    <!-- END ARTICLE FEED -->
+</div>
+
+<!-- CMS.js -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.12/es5-shim.min.js"></script>
+<script src="./js/cms.js"></script>
+<!-- Markdown Engine -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.2/markdown-it.min.js"></script>
+<!-- Config -->
+<script src="./js/config.js"></script>
+</body>
 </html>
