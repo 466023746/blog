@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Challenget blog</title>
     <link rel="manifest" href="./manifest.json">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/icon-48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/touch/icon-48.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- Bulma Version 0.7.2-->
@@ -87,5 +87,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.2/markdown-it.min.js"></script>
 <!-- Config -->
 <script src="./js/config.js"></script>
+<!-- Service Worker -->
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful!');
+        }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    }
+</script>
 </body>
 </html>

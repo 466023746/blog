@@ -1,0 +1,25 @@
+{
+  "name": "cms.js-starter",
+  "version": "1.0.0",
+  "description": "**Quick Start**",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/466023746/cms.js-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/466023746/cms.js-starter/issues"
+  },
+  "homepage": "https://github.com/466023746/cms.js-starter#readme",
+  "dependencies": {
+    "sw-toolbox": "^3.6.0"
+  }
+}
