@@ -1,6 +1,6 @@
 {
-  "name": "ChallengetBlog",
-  "short_name": "ChallengetBlog",
+  "name": "Challenget Blog",
+  "short_name": "t blog",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
