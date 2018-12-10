@@ -7,8 +7,6 @@ author: challenget
 excerpt: 不要问我weex动画有多坑，你想多坑就多坑！😄
 ---
 
-# weex轮播动画深坑之旅
-
 ![demo](https://user-images.githubusercontent.com/10148735/48933725-5486d980-ef3c-11e8-8efa-27b722f86624.gif)
 
 `weex animation`坑到我怀疑人生，特在此记录！
@@ -90,7 +88,7 @@ ios算正常了，再看android，图片变大后没有居中。这里大小变�
 
 animation结束后android不会触发布局渲染，导致页面异常，所以在动画结束之后需要更新数据强制渲染。
 
-正常来说只需要图片切换时调用weex animation执行动画就行里，但是现在我们需要保持每个图片和间距的状态数据，然后监听一次滑动涉及的多个动画都结束的时候更新数据，触发vue重新渲染。
+正常来说只需要图片切换时调用weex animation执行动画就行了，但是现在我们需要保持每个图片和间距的状态数据，然后监听一次滑动涉及的多个动画都结束的时候更新数据，触发vue重新渲染。
 
 ```js
 // 图片保存transform
