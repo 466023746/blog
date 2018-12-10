@@ -45,6 +45,11 @@ html,body {
 .media-content {
     margin-top: 3rem;
 }
+@media screen and (max-width: 768px) {
+    .media-content {
+        overflow-x:  visible;
+    }
+}
 .article, .promo-block {
     margin-top: 6rem;
 }
