@@ -5,6 +5,7 @@ var CMS = function (o) {
     token = token.split('#').join('');
     var n, e;
     this.ready = !1, this.routes = {}, this.collections = {};
+    var docTitle = document.title;
     var i = {
             elementId: null,
             layoutDirectory: null,
@@ -177,6 +178,8 @@ var CMS = function (o) {
             })[0]
         }, render: function () {
             return d(this.layout.list, this)
+        }, handleSEO: function () {
+            document.title = docTitle + ' - ' + this.type;
         }
     };
     var b = function (t, e, n) {
@@ -223,7 +226,10 @@ var CMS = function (o) {
             this.setFilename(), this.setPermalink(), this.parseFrontMatter(), this.setListAttributes(), this.setDate(), this.setBody()
         }, render: function () {
             return d(this.layout, this)
-        }
+        }, handleSEO: function () {
+            document.title = docTitle + ' - ' + this.title;
+            return this;
+        },
     }, this.sort = function (t, e) {
         this.ready ? (this.collections[t][t].sort(e), this.collections[t].render()) : m(c)
     }, this.search = function (t, e, n) {
@@ -237,8 +243,8 @@ var CMS = function (o) {
         return this.routes[e] = function () {
             if (e) if (n) {
                 var t = ["#", e, n.trim()].join("/");
-                i.getFileByPermalink(t).render()
-            } else i ? (r ? i.search("title", r) : s ? i.getByTag(s) : i.resetSearch(), i.render()) : d(o.errorLayout, {}); else window.location = ["#", o.defaultView].join("/");
+                i.getFileByPermalink(t).handleSEO().render()
+            } else i ? (r ? i.search("title", r) : s ? i.getByTag(s) : i.resetSearch(), i.handleSEO(), i.render()) : d(o.errorLayout, {}); else window.location = ["#", o.defaultView].join("/");
             o.onroute()
         }, this.routes[e]()
     }, this.registerPlugins = function () {
