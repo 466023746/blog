@@ -126,6 +126,16 @@ style = {
 
 在手指滑动过程中偶现抖动，因为在滑动过程中要不断渲染，猜测是weex渲染顺序错乱导致的，最终排除不出具体原因只好注释touchMove方法，取消实时滑动动画，只在滑动结束时触发一次滑动动画。
 
+## android `touchend`基本不触发
+
+只见`touchstart`触发，`touchend`很少触发，这我也是很无奈，可能是绑定的元素比较特殊导致，这边可以在`touchmove`里判断，也可以改用`swipe`事件，我选择的是后者，因为`swipe`同时解决里上面一个问题。
+
+## android `clearInterval` `clearTimeout`无效
+
+android内定时器无法清除。。。因为要自动播放，正常来说我是`touchstart`清定时器，`touchend`开计时器。
+
+解决方法是android内部只在初始化时开计时器，`touchend`不开。
+
 ## 最后
 
 > 不要问我weex动画有多坑，你想多坑就多坑！😄
