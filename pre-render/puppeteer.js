@@ -22,7 +22,6 @@ const urls = [
 (async () => {
     const browser = await puppeteer.launch();
 
-    console.log(urls)
     urls.forEach(async item => {
         const page = await browser.newPage();
         await page.goto(item, {waitUntil: 'networkidle0'});
