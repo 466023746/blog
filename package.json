@@ -1,25 +1,31 @@
 {
-  "name": "cms.js-starter",
-  "version": "1.0.0",
-  "description": "**Quick Start**",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
+  "name": "koa-server2",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bin/www",
+    "dev": "./node_modules/.bin/nodemon bin/www",
+    "prd": "pm2 start bin/www",
+    "pre-render": "node pre-render/puppeteer"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/466023746/cms.js-starter.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/466023746/cms.js-starter/issues"
-  },
-  "homepage": "https://github.com/466023746/cms.js-starter#readme",
   "dependencies": {
+    "debug": "^2.6.3",
+    "event-stream": "^3.3.4",
+    "glob": "^7.1.3",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^2.0.1",
+    "koa-onerror": "^1.2.1",
+    "koa-router": "^7.1.1",
+    "koa-static": "^3.0.0",
+    "koa-views": "^5.2.1",
+    "pug": "^2.0.0-rc.1",
+    "puppeteer": "^1.10.0",
     "sw-toolbox": "^3.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
   }
 }
