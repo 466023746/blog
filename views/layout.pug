@@ -1,6 +1,80 @@
 doctype html
 html
   head
-    title= title
+    //- google search engine console
+    meta(name="google-site-verification" content="YH3zpWxRS6AYsYfr-Ai9ZJkBjQY1rU66tZYptvhD8p0")
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="keywords" content="Challenget，博客，前端")
+    meta(name="description" content="Challenget的博客，前端码农。")
+    title Challenget的博客
+    link(rel="manifest" href="/manifest.json")
+    link(rel="icon" type="image/png" sizes="32x32" href="/images/touch/icon-48.png")
+    link(rel="stylesheet" href="/css/font-awesome.min.css")
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
+    //- Bulma Version 0.7.2
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css")
+    link(rel="stylesheet" type="text/css" href="/css/bulma-blog.css")
+    link(href="/css/animations.css" rel="stylesheet")
+    noscript Please enable JavaScript to view this site.
   body
-    block content
+    //- START NAV
+    nav(class="navbar")
+      div(class="container")
+        div(class="navbar-brand")
+          a(class="navbar-item" href="/") Challenget
+
+          span(class="navbar-burger burger" data-target="navbarMenu")
+            span
+            span
+            span
+
+        div(id="navbarMenu" class="navbar-menu")
+          div(class="navbar-end")
+            //- a(class="navbar-item is-active" href="/") Home
+            a(class="navbar-item" href="/") Home
+            a(class="navbar-item" href="/posts") Posts
+            a(class="navbar-item" href="/pages/about") About
+            a(class="navbar-item" href="/pages/links") Links
+
+            div(class="navbar-item has-dropdown is-hoverable")
+              a(class="navbar-link") Dropdown
+              div(class="navbar-dropdown")
+                a(class="navbar-item" href="/pages") Pages
+    //- END NAV
+
+    section(class="hero is-info is-medium is-bold")
+      div(class="hero-body")
+        div(class="container has-text-centered")
+          h1(class="title is-size-1") Challenget的博客
+
+    div(class="container")
+      //- START ARTICLE FEED
+      section(class="articles")
+        div(class="column is-8 is-offset-2")
+
+          //- Content
+          div(id="cms")
+            block content
+      //- END ARTICLE FEED
+
+    //- Service Worker
+    script.
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+          console.log('ServiceWorker registration successful!');
+        }).catch(function (err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      }
+
+    //- 百度统计
+    script.
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?66e8b53ba651f015a2f968cb892c681b";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();

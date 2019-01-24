@@ -1,0 +1,23 @@
+//- Post List Template
+
+extends layout
+
+block content
+  each post in pages
+    if !post.draft
+      div(class="card article fade-in")
+        a(href=post.permalink)
+          div(class="card-content")
+            div(class="media")
+              div(class="media-center")
+                img(src="/images/touch/icon-144.png" class="author-image" alt="Placeholder image")
+              div(class="media-content has-text-centered")
+                p(class="title article-title") #{post.title}
+                div(class="tags has-addons level-item")
+                  if post.author
+                  span(class="tag is-rounded is-info") #{post.author}
+                  if post.date
+                  span(class="tag is-rounded") #{post.date}
+            div(class="content article-body")
+              if post.excerpt
+              p(class="excerpt") #{post.excerpt}

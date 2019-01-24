@@ -1,14 +1,14 @@
 {
-  "name": "koa-server2",
-  "version": "0.1.0",
+  "name": "blog",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node bin/www",
-    "dev": "./node_modules/.bin/nodemon bin/www",
-    "prd": "pm2 start bin/www",
-    "pre-render": "node pre-render/puppeteer"
+    "dev": "nodemon bin/www",
+    "debug": "node $NODE_DEBUG_OPTION bin/www",
+    "prd": "pm2 start bin/www"
   },
   "dependencies": {
+    "bluebird": "^3.5.3",
     "debug": "^2.6.3",
     "event-stream": "^3.3.4",
     "glob": "^7.1.3",
@@ -21,11 +21,9 @@
     "koa-router": "^7.1.1",
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
-    "pug": "^2.0.0-rc.1",
-    "puppeteer": "^1.10.0",
-    "sw-toolbox": "^3.6.0"
+    "markdown-it": "^8.4.2",
+    "markdown-it-front-matter": "^0.1.2",
+    "pug": "^2.0.0-rc.1"
   },
-  "devDependencies": {
-    "nodemon": "^1.8.1"
-  }
+  "devDependencies": {}
 }

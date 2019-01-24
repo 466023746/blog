@@ -1,0 +1,23 @@
+
+extends layout
+
+block content
+  div(class="card article fade-in")
+    div(class="card-content")
+      div(class="media")
+        div(class="media-center")
+          img(src="/images/touch/icon-144.png" class="author-image" alt="Placeholder image")
+        div(class="media-content has-text-centered")
+          p(class="title article-title") #{title}
+          p(class="subtitle is-6 article-subtitle")
+            if author
+              a(href="/") #{author}
+            if date
+              span &nbsp;on&nbsp;#{date}
+        div(class="tags")
+          if tags
+            each tag in tags
+              if tag
+                a(href=`/posts?tag=${tag}`)
+                  span(class="tag is-rounded is-info") #{tag}
+      div(class="content article-body") !{body}

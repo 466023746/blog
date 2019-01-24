@@ -1,0 +1,13 @@
+//- Page List Template
+
+extends layout
+
+block content
+  div(class="card article fade-in")
+    div(class="card-content")
+      h1(class="is-size-1") Pages
+      hr/
+      each page in pages
+        h3(class="is-size-3")
+          a(href=page.permalink) #{page.title}
+
